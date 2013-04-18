@@ -1,0 +1,18 @@
+--- 
+applications: 
+  .: 
+    name: resqueme
+    framework: 
+      name: standalone
+      info: 
+        mem: 64M
+        description: Standalone Application
+        exec: 
+    runtime: ruby193
+    command: bundle exec rake QUEUE=default resque:work
+    url: 
+    mem: 128M
+    instances: 1
+    services: 
+      resque: 
+        type: redis
